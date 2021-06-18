@@ -4,8 +4,9 @@ import Button from '@material-ui/core/Button';
 import emailjs from 'emailjs-com';
 import DatePicker from './DatePicker';
 import TextField from '@material-ui/core/TextField';
-
+import { NotificationManager } from 'react-notifications';
 require('dotenv').config();
+
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -45,9 +46,15 @@ export default function Email() {
       .then(
         (result) => {
           console.log(result.text);
+          NotificationManager.success(
+            'Confirmation sent, please check your email!',
+            'Successful!',
+            2000
+          );
         },
         (error) => {
           console.log(error.text);
+          NotificationManager.error('Please enter a valid email!', 'Error!');
         }
       );
   }
@@ -87,6 +94,7 @@ export default function Email() {
               }}
               variant='outlined'
               size='small'
+              required
             />
             <br />
             <br />
@@ -108,6 +116,7 @@ export default function Email() {
               }}
               variant='outlined'
               size='small'
+              required
             />
             <br />
             <br />

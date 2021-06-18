@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import DateFnsUtils from '@date-io/date-fns';
-import { makeStyles } from '@material-ui/core/styles';
 
 import {
   MuiPickersUtilsProvider,
@@ -40,6 +39,7 @@ export default function MaterialDatePicker() {
         KeyboardButtonProps={{
           'aria-label': 'change date',
         }}
+        required
       />
 
       <KeyboardTimePicker
@@ -58,6 +58,7 @@ export default function MaterialDatePicker() {
           'aria-label': 'change time',
         }}
         size='small'
+        required
       />
       <br />
       <br />
