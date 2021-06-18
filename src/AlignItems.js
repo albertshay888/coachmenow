@@ -33,17 +33,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function AlignItemsList() {
-  const [showHideEmail, setShowHideEmail] = useState(false);
-
   const classes = useStyles();
 
-  // <Item className={classes.ul} />
-  // <Item className={classes.ul} />
-  // <Item className={classes.ul} />
-  // <Item className={classes.ul} />
-  // <Item className={classes.ul} />
-  // <Item className={classes.ul} />
-  // <button onClick={() => hideComponent('showHideEmail')}> </button>
   return (
     <List className={classes.list} container justify='center'>
       <Item />

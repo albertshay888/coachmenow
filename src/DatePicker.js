@@ -8,17 +8,6 @@ import {
   KeyboardTimePicker,
 } from '@material-ui/pickers';
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing(0),
-    marginRight: theme.spacing(0),
-    width: 300,
-  },
-}));
 export default function MaterialDatePicker() {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
