@@ -5,6 +5,7 @@ import emailjs from 'emailjs-com';
 import DatePicker from './DatePicker';
 import TextField from '@material-ui/core/TextField';
 import { NotificationManager } from 'react-notifications';
+
 require('dotenv').config();
 
 const useStyles = makeStyles((theme) => ({
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       top: '800px',
       bottom: '0',
-      width: '400px',
+      width: '375px',
       height: '200px',
 
       justifyContent: 'center',
@@ -48,8 +49,7 @@ export default function Email() {
           console.log(result.text);
           NotificationManager.success(
             'Confirmation sent, please check your email!',
-            'Successful!',
-            2000
+            'Successful!'
           );
         },
         (error) => {
@@ -58,10 +58,41 @@ export default function Email() {
         }
       );
   }
-
+  // <TextField
+  //             type='text'
+  //             name='user_email'
+  //             placeholder='enter email'
+  //             inputProps={{ 'aria-label': 'description' }}
+  //             border={1}
+  //             borderColor='#e0e0e0'
+  //             style={{
+  //               position: 'absolute',
+  //               justifyContent: 'center',
+  //               top: '65px',
+  //               right: '20px',
+  //               left: '20px',
+  //               borderRadius: '5px',
+  //               height: '1px',
+  //             }}
+  //             variant='outlined'
+  //             size='small'
+  //             required
+  //           />
+  //   <Button
+  //   type='submit'
+  //   width='200px'
+  //   variant='contained'
+  //   size='small'
+  //   color='#787878'
+  //   display='flex'
+  //   fontFamily='Lato, sans-serif'
+  //   justifyContent='center'
+  //   borderColor='#909090'
+  // >
+  //   Confirm
+  // </Button>
   return (
     <>
-      <br />
       <div className={classes.email}>
         <form
           className={classes.root}
@@ -75,52 +106,8 @@ export default function Email() {
               textAlign: 'center',
             }}
           >
-            <TextField
-              type='text'
-              name='user_name'
-              placeholder='enter name'
-              inputProps={{ 'aria-label': 'description' }}
-              border={1}
-              borderColor='#e0e0e0'
-              backgroundColor='white'
-              style={{
-                position: 'absolute',
-                justifyContent: 'center',
-                top: '20px',
-                right: '20px',
-                left: '20px',
-                borderRadius: '5px',
-                height: '1px',
-              }}
-              variant='outlined'
-              size='small'
-              required
-            />
             <br />
-            <br />
-            <TextField
-              type='text'
-              name='user_email'
-              placeholder='enter email'
-              inputProps={{ 'aria-label': 'description' }}
-              border={1}
-              borderColor='#e0e0e0'
-              style={{
-                position: 'absolute',
-                justifyContent: 'center',
-                top: '65px',
-                right: '20px',
-                left: '20px',
-                borderRadius: '5px',
-                height: '1px',
-              }}
-              variant='outlined'
-              size='small'
-              required
-            />
-            <br />
-            <br />
-            <br />
+
             <DatePicker
               style={{
                 justifyContent: 'center',
@@ -134,19 +121,6 @@ export default function Email() {
             />
             <br />
             <br />
-            <Button
-              type='submit'
-              width='200px'
-              variant='contained'
-              size='small'
-              color='#787878'
-              display='flex'
-              fontFamily='Lato, sans-serif'
-              justifyContent='center'
-              borderColor='#909090'
-            >
-              Confirm
-            </Button>
           </div>
         </form>
       </div>

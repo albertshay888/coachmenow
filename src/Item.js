@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   large: {
     width: theme.spacing(10),
     height: theme.spacing(10),
-    marginRight: '20px',
+    marginRight: '2px',
     float: 'left',
   },
   list: {
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   item: {
     display: 'flex',
     flexDirection: 'column',
-    width: '355px',
+    width: '365px',
     margin: '4px',
     fontFamily: 'Lato, sans-serif',
     borderColor: ' #484848',
